@@ -4,7 +4,7 @@
 \alias{myddt}
 \title{my ddt}
 \usage{
-myddt(df = read.csv("DDT.csv"), SPECIES = "CCATFISH")
+myddt(df, SPECIES = "CCATFISH")
 }
 \arguments{
 \item{df}{a data frame}

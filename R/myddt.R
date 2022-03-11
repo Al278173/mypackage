@@ -15,7 +15,7 @@
 #' @examples
 #' \dontrun{myddt(ddt, SPECIES="CCATFISH")}
 #' \dontrun{myddt(ddt, SPECIES="SMBUFFALO")}
-myddt <- function(df=read.csv("DDT.csv"), SPECIES="CCATFISH") {
+myddt <- function(df, SPECIES="CCATFISH") {
   RIVER <- WEIGHT <- LENGTH <- NULL
   d <- df %>% filter(SPECIES=={{SPECIES}})
   write.csv(d, file=paste("LvsWfor", SPECIES, ".csv", sep=""))
