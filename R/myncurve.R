@@ -4,6 +4,9 @@
 #' @param sigma standard deviation as a number
 #' @param a a variable as a number
 #'
+#' @importFrom graphics curve polygon
+#' @importFrom stats dnorm pnorm
+#'
 #' @return A plot of a normal curve and the probability of X<=a
 #' @export
 #'

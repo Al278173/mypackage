@@ -5,7 +5,7 @@
 #' @param xlab x label
 #' @param ylab y label
 #'
-#'@importFrom graphics barplot hist par mtext
+#'@importFrom graphics barplot hist par mtext layout
 #'
 #' @return A sophisticated histogram
 #' @export

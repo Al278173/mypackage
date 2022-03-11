@@ -4,15 +4,17 @@
 #' @param n Size of each sample
 #' @param p Probability of success in each sample
 #'
-#' @return A barplot for the percentage of samples vs number of successes
-#' @export 
+#' @importFrom grDevices rainbow
 #'
-#' @examples 
+#' @return A barplot for the percentage of samples vs number of successes
+#' @export
+#'
+#' @examples
 #' mybin(iter=100, n=10, p=0.7)
-mybin=function(iter=100,n=10, p=0.5){ 
+mybin=function(iter=100,n=10, p=0.5){
   # make a matrix to hold the samples
   #initially filled with NA's
-  sam.mat=matrix(NA,nr=n,nc=iter, byrow=TRUE)
+  sam.mat=matrix(NA,nrow=n,ncol=iter, byrow=TRUE)
   #Make a vector to hold the number of successes in each trial
   succ=c()
   for( i in 1:iter){
