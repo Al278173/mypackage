@@ -21,11 +21,10 @@ myboot2<-function(iter=10000,x,fun="mean",alpha=0.05,cx=1.5,...){
   rs.mat=matrix(y,nr=n,nc=iter,byrow=TRUE)
   xstat=apply(rs.mat,2,fun)
   ci=quantile(xstat,c(alpha/2,1-alpha/2))
-  para=hist(xstat,freq=FALSE,las=1,
-            main=paste("Histogram of Bootstrap sample statistics","\n","alpha=",alpha," iter=",iter,sep=""),
+  para=hist(xstat,freq=FALSE,las=1, main=paste("Histogram of Bootstrap sample
+                                               statistics","\n","alpha=",alpha,
+                                               " iter=",iter,sep=""),
             ...)
-
-
   mat=matrix(x,nr=length(x),nc=1,byrow=TRUE)
 
   pte=apply(mat,2,fun)
