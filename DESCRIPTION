@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Ruyu Liu
 Maintainer: Ruyu Liu <ruyu.liu-1@ou.edu>
 Description: Contains functions from lab assignments.
-Imports: dplyr, ggplot2
+Imports: dplyr, ggplot2, stats
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
