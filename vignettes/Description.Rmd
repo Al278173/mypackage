@@ -1,0 +1,61 @@
+---
+title: "Package function"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Package function}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(mypackage)
+```
+
+# Introduction
+
+This package contains some functions used in labs.
+
+## mybin function
+
+The function takes in a sample size n, the number of iterations, and a probability of success p, and returns a barplot for the percentage of samples vs number of successes.
+
+```{r}
+mybin(iter=100, n=10, p=0.7)
+```
+
+## Myddt function
+
+The function takes in a data frame and the name of some species, then returns a Length~Weight plot with a quadratic curve for the species and a named list of the original data frame, subsetted data frame, and a relative frequency table of River in the original data frame. The function is made with 
+
+```{r}
+library(dplyr)
+library(ggplot2)
+ddt = read.csv("DDT.csv")
+buff = myddt(ddt, SPECIES="SMBUFFALO")
+```
+
+## mymaxlik function
+
+This function finds the maximum likelihood estimate. It takes in a function, some data as a vector, and a range of values of unknown parameters as a vector, then returns a graph showing line of log likelihood and the maximum likelihood estimate, and a named list of the index, the maximum likelihood estimate, the log likelihood, and a vector of slopes.
+
+```{r}
+mymaxlik(x=c(3,3,4,3,4,5,5,4),param=seq(0,1,length=1000),lfun=function(x,param) log(dbinom(x,prob=param,size=20)),main="Binomial", cex.main=2)
+```
+
+## Scatterhist function
+
+The function takes in at least two parameters, two vectors, and can also take in their labels. It then returns a histogram combined with a scatterplot. 
+
+```{r}
+library(graphics)
+
+with(ddt, scatterhist(LENGTH, WEIGHT, xlab="LENGTH"))
+```
+
